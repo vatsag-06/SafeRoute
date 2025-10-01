@@ -21,9 +21,11 @@ def generate_fake_points(center=(33.6405, -117.8443), n=50):
              lon_c + random.uniform(-0.05, 0.05)) for _ in range(n)]
 
 try:
-    CRIME_DATA = pd.read_csv("default_crime_500.csv")
+    CRIME_DATA = pd.read_csv("Crime.csv")
     CRIME_POINTS = CRIME_DATA[["lat", "lon"]].to_numpy().tolist()
+    print("success")
 except Exception:
+    print("failure")
     CRIME_POINTS = generate_fake_points()
 
 class RouteRequest(BaseModel):
@@ -137,3 +139,4 @@ def get_route(req: RouteRequest):
         "shortest_route": path_to_coords(G, short_path),
         "safest_route": path_to_coords(G, safe_path),
     }
+
