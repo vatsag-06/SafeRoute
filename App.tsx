@@ -22,7 +22,7 @@ interface RouteResult {
   safest_route: LatLng[];
 }
 
-const BACKEND_LAN = "http://192.168.1.14:8000";
+const BACKEND_LAN = "http://192.168.1.130:8000";
 const BACKEND_ANDROID_EMULATOR = "http://10.0.2.2:8000";
 
 const BASE_URL =
